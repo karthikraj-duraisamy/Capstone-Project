@@ -1,0 +1,83 @@
+<resources>
+    <string name="app_name">NewsAgent</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="news_feeds">News Feeds</string>
+    <string name="category">Category</string>
+    <string name="liked_feeds">Liked Feeds</string>
+    <string name="general">General</string>
+    <string name="about">About</string>
+    <string name="circle_text">  \u25CF  </string>
+    <string name="placeholde_string">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+
+    <string-array name="available_catgories">
+        <item>GENERAL</item>
+        <item>SPORTS</item>
+        <item>TECHNOLOGY</item>
+        <item>ENTERTAINMENT</item>
+        <item>BUSINESS</item>
+        <item>MUSIC</item>
+    </string-array>
+
+    <string-array name="category_sports">
+        <item>bbc-sport</item>
+        <item>espn</item>
+        <item>espn-cric-info</item>
+        <item>football-italia</item>
+        <item>four-four-two</item>
+        <!--
+        <item>the-sport-bible</item>
+        <item>talksport</item>
+        <item>fox-sports</item>
+        <item>nfl-news</item>
+-->
+    </string-array>
+
+    <string-array name="category_general">
+        <item>bild</item>
+        <item>al-jazeera-english</item>
+        <item>abc-news-au</item>
+        <item>associated-press</item>
+        <item>bbc-news</item>
+    </string-array>
+
+
+    <string-array name="category_technology">
+        <item>hacker-news</item>
+        <item>engadget</item>
+        <item>techradar</item>
+        <item>techcrunch</item>
+        <item>recode</item>
+    </string-array>
+
+
+    <string-array name="category_business">
+        <item>bloomberg</item>
+        <item>business-insider</item>
+        <item>business-insider-uk</item>
+        <item>cnbc</item>
+        <item>the-economist</item>
+    </string-array>
+
+
+    <string-array name="category_music">
+        <item>mtv-news</item>
+        <item>mtv-news-uk</item>
+    </string-array>
+
+    <string-array name="category_entertainment">
+        <item>entertainment-weekly</item>
+        <item>mashable</item>
+        <item>newsweek</item>
+        <item>buzzfeed</item>
+        <item>daily-mail</item>
+    </string-array>
+    <string name="appwidget_text">@string/app_name</string>
+    <string name="add_widget">Add widget</string>
+
+
+</resources>
+
