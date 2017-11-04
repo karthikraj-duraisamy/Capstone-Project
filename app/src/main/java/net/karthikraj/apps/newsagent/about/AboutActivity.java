@@ -25,7 +25,7 @@ public class AboutActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setTitle(getString(R.string.liked_feeds));
+        actionBar.setTitle(getString(R.string.about));
 
     }
 
