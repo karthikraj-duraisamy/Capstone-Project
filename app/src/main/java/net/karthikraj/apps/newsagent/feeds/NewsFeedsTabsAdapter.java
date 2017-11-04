@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 
 import net.karthikraj.apps.newsagent.R;
 import net.karthikraj.apps.newsagent.model.Article;
@@ -14,11 +15,19 @@ import java.util.ArrayList;
  * Created by karthik on 1/11/17.
  */
 
-public class NewsFeedsTabsAdapter extends FragmentPagerAdapter {
+public class NewsFeedsTabsAdapter extends FragmentStatePagerAdapter {
 
     private int mPageCount = 0;
     private String tabTitles[];
     private Context context;
+    public static final String EXTRA_POSITION = "extra_position";
+
+    GeneralNewsFeedFragment generalNewsFeedFragment;
+    SportsNewsFeedFragment sportsNewsFeedFragment;
+    EntertainmentNewsFeedFragment entertainmentNewsFeedFragment;
+    BusinessNewsFeedFragment businessNewsFeedFragment;
+    TechNewsFeedFragment techNewsFeedFragment;
+    MusicNewsFeedFragment musicNewsFeedFragment;
 
     public NewsFeedsTabsAdapter(FragmentManager fragmentManager, Context context) {
         super(fragmentManager);

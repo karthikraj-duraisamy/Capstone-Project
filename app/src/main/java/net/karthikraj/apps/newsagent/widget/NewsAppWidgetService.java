@@ -176,9 +176,10 @@ public class NewsAppWidgetService extends RemoteViewsService {
                             rv.setTextViewText(R.id.stackWidgetItemUsername, article.getAuthor());
                         }
                         rv.setTextViewText(R.id.stackWidgetItemContent, Html.fromHtml(article.getDescription()));
-                        // store the buzz ID in the extras so the main activity can use it
+
+
                         Bundle extras = new Bundle();
-                        extras.putLong(MainActivity.EXTRA_ID, article.getRowId());
+                        extras.putLong(NewsAppWidget.EXTRA_WIDGET_SELECTION_ARTICLE_ID, article.getRowId());
                         Intent fillInIntent = new Intent();
                         fillInIntent.putExtras(extras);
                         rv.setOnClickFillInIntent(R.id.stackWidgetItem, fillInIntent);

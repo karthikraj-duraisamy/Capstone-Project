@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:id="@+id/layoutGeneral"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutGeneral"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="2dp"
-    android:layout_weight="1"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_weight="1">
 
     <ImageView
         android:id="@+id/ivNewsFeedImage"
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:scaleType="fitXY"
+        android:transitionName="@string/shared_elements_newsarticle"
         app:srcCompat="@drawable/vector_general" />
 
     <FrameLayout
@@ -20,69 +21,68 @@
         android:layout_height="64dp"
         android:layout_gravity="bottom"
         android:background="@drawable/image_scrim_bg">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/tvSourceName"
-                android:background="@drawable/text_bg_source_name"
                 android:layout_width="wrap_content"
-                android:textColor="@color/colorWhite"
                 android:layout_height="wrap_content"
-                android:padding="2dp"
-                android:textSize="8dp"
-                android:layout_margin="2dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:text="Techcrunch" />
+                android:layout_margin="2dp"
+                android:background="@drawable/text_bg_source_name"
+                android:padding="2dp"
+                android:textColor="@color/colorWhite"
+                android:textSize="12sp"
+                tools:text="Techcrunch" />
 
             <TextView
                 android:id="@+id/tvNewsTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/tvSourceName"
-                android:padding="2dp"
-                android:textSize="12dp"
-                android:layout_margin="2dp"
-                android:layout_alignStart="@+id/tvSourceName"
-                android:textColor="@color/colorWhite"
-                tools:text="Some title that is going to be here for testing purpose"
-                android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
-                android:layout_below="@+id/tvSourceName" />
+                android:layout_alignParentRight="true"
+                android:layout_alignStart="@+id/tvSourceName"
+                android:layout_below="@+id/tvSourceName"
+                android:layout_margin="2dp"
+                android:padding="2dp"
+                android:textColor="@color/colorWhite"
+                android:textSize="12sp"
+                android:transitionName="@string/shared_elements_article_titile_name"
+                tools:text="Some title that is going to be here for testing purpose" />
 
             <TextView
                 android:id="@+id/tvAuthorName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/tvNewsTitle"
-                android:padding="2dp"
-                android:textSize="10dp"
-                android:layout_margin="2dp"
                 android:layout_alignParentBottom="true"
                 android:layout_alignStart="@+id/tvNewsTitle"
+                android:layout_margin="2dp"
+                android:padding="2dp"
                 android:textColor="@color/colorWhite"
+                android:textSize="12sp"
+                android:transitionName="@string/shared_elements_article_author"
                 tools:text="Author name" />
 
             <TextView
                 android:id="@+id/tvPusblishedAt"
                 android:layout_width="wrap_content"
-                android:textSize="8dp"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/tvAuthorName"
                 android:layout_alignEnd="@+id/tvNewsTitle"
                 android:layout_alignRight="@+id/tvNewsTitle"
                 android:textColor="@color/colorWhite"
+                android:textSize="12sp"
+                android:transitionName="@string/shared_elements_article_date"
                 tools:text="19/Oct/2017 19:00:45" />
         </RelativeLayout>
 
-<!--
-        <include layout="@layout/include_image_partnertext"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
--->
     </FrameLayout>
 
 

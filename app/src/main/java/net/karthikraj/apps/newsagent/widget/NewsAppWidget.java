@@ -16,6 +16,8 @@ import net.karthikraj.apps.newsagent.feeds.MainActivity;
  */
 public class NewsAppWidget extends AppWidgetProvider {
 
+    public static final String EXTRA_WIDGET_SELECTION_ARTICLE_ID = "extra_widget_selection_article_id";
+
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId) {
 

@@ -1,5 +1,6 @@
 package net.karthikraj.apps.newsagent.networking;
 
+
 import net.karthikraj.apps.newsagent.model.Articles;
 
 import io.reactivex.Observable;

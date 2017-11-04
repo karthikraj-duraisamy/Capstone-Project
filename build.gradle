@@ -7,7 +7,8 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.3'
         classpath 'com.jakewharton:butterknife-gradle-plugin:8.2.1'
-
+        classpath 'com.google.gms:google-services:3.1.1' // google-services plugin
+        classpath 'com.google.firebase:firebase-plugins:1.1.1'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -25,8 +26,10 @@ allprojects {
 ext {
     //application specific
     applicationId = 'net.karthikraj.apps.newsagent'
+    applicationIdFree = 'net.karthikraj.apps.newsagent.free'
+    applicationIdPaid = 'net.karthikraj.apps.newsagent.paid'
     versionCode = 1
-    versionName = '1.0'
+    versionName = '1.0.0'
 
     // sdk and tools
     minSdkVersion = 16

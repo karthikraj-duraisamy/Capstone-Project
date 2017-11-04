@@ -12,4 +12,7 @@ Refer to App Widget Documentation for margin information
 http://developer.android.com/guide/topics/appwidgets/index.html#CreatingLayout
     -->
     <dimen name="widget_margin">8dp</dimen>
+    <dimen name="details_image_height">250dp</dimen>
+    <dimen name="normal_16dp_padding">16dp</dimen>
+    <dimen name="share_btn_drawable_padding">20dp</dimen>
 </resources>

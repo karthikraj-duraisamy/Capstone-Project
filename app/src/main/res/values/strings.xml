@@ -12,6 +12,7 @@
     <string name="about">About</string>
     <string name="circle_text">  \u25CF  </string>
     <string name="placeholde_string">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="widget_empty_content">No news feeds found. Please launch the app at least once.</string>
 
     <string-array name="available_catgories">
         <item>GENERAL</item>
@@ -77,6 +78,24 @@
     </string-array>
     <string name="appwidget_text">@string/app_name</string>
     <string name="add_widget">Add widget</string>
+    <string name="action_share">Share</string>
+    <string name="alert_msg_likes_addition_success">Added into likes.</string>
+    <string name="action_remove">REMOVE</string>
+    <string name="alert_likes_remove_success">Removed from likes.</string>
+    <string name="action_add_again">ADD AGAIN</string>
+    <string name="shared_elements_newsarticle">newsarticle</string>
+    <string name="shared_elements_article_titile_name">newsarticletitle</string>
+    <string name="shared_elements_article_date">newsarticledate</string>
+    <string name="shared_elements_article_author">newsarticleauthor</string>
+    <string name="content_desc_like_button">Like Button</string>
+    <string name="tab_title_general">GENERAL</string>
+    <string name="tab_titile_sports">SPORTS</string>
+    <string name="tab_title_entertainment">ENTERTAINMENT</string>
+    <string name="tab_title_business">BUSINESS</string>
+    <string name="tab_titile_technology">TECHNOLOGY</string>
+    <string name="tab_titile_music">MUSIC</string>
+    <string name="about_app_text">NeswAgent v 1.0.0\n\n\nNewsAgent is an Android application which aggregates all the latest news of categories like General, Entertainment, Sports, Business, Technology, Music.\n\n\nAdditionally NewsAgent application provides the ability to like and store the news content for future reference. Users can share the news content.\n\n\nThis application is created as a capstone project for the Android Nanodegree Developer program.</string>
+    <string name="app_short_desc">Perfect news application</string>
 
 
 </resources>

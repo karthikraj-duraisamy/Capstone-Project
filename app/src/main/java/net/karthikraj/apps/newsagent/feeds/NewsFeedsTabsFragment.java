@@ -4,13 +4,16 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
+import android.support.v4.util.Pair;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -65,6 +68,7 @@ public class NewsFeedsTabsFragment extends Fragment implements NewsFeedsAdapter.
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mPage = getArguments().getInt(ARG_PAGE);
+        setRetainInstance(true);
     }
 
 
@@ -73,13 +77,6 @@ public class NewsFeedsTabsFragment extends Fragment implements NewsFeedsAdapter.
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_news_feeds, container, false);
         ButterKnife.bind(this,rootView);
-        return rootView;
-    }
-
-
-    @Override
-    public void onStart() {
-        super.onStart();
         mArticleList = new ArrayList<>();
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
@@ -94,18 +91,33 @@ public class NewsFeedsTabsFragment extends Fragment implements NewsFeedsAdapter.
         //mAdapter.updateDataSet(mArticleList);
         mRecyclerView.setAdapter(mAdapter);
         getActivity().getSupportLoaderManager().initLoader(CURSOR_LOADER, null, this).forceLoad();
+        return rootView;
+    }
+
+
+    @Override
+    public void onStart() {
+        super.onStart();
     }
 
     @Override
-    public void onArticleClicked(Article article) {
-        Snackbar.make(mRecyclerView, "We need to call detailView from here", Snackbar.LENGTH_LONG).show();
+    public void onArticleClicked(Article article, View imageView, View titleTextView, View authorNameTextView, View pushlishDateTextView) {
         Intent launchIntent = new Intent(getActivity(), ArticleDetailsActivity.class);
         launchIntent.putExtra(ArticleDetailsActivity.EXTRA_SELECTED_ARTICLE, article);
-        getActivity().startActivity(launchIntent);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+
+            Pair<View, String> p1 = Pair.create((View) imageView, "newsarticle");
+            Pair<View, String> p2 = Pair.create((View) titleTextView, "newsarticletitle");
+            Pair<View, String> p3 = Pair.create((View) authorNameTextView, "newsarticleauthor");
+            Pair<View, String> p4 = Pair.create((View) pushlishDateTextView, "newsarticledate");
+            ActivityOptionsCompat options = ActivityOptionsCompat.
+                    makeSceneTransitionAnimation(getActivity(), p1, p2, p3, p4);
+
+            getActivity().startActivity(launchIntent, options.toBundle());
+        } else {
+            startActivity(launchIntent);
+        }
     }
-
-
-
     private DownloadHelper.ArticlesCategory getArticlesCategory(String s, DownloadHelper.ArticlesCategory articlesCategory) {
         if(s.equals("GENERAL")) {
             articlesCategory = DownloadHelper.ArticlesCategory.GENERAL;

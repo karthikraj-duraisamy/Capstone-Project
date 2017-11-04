@@ -18,22 +18,6 @@ public class Article implements Parcelable {
     private String sourceName;
     private long rowId;
 
-    public long getRowId() {
-        return rowId;
-    }
-
-    public void setRowId(long rowId) {
-        this.rowId = rowId;
-    }
-
-    public String getSourceName() {
-        return sourceName;
-    }
-
-    public void setSourceName(String sourceName) {
-        this.sourceName = sourceName;
-    }
-
     public String getAuthor() {
         return author;
     }
@@ -82,6 +66,22 @@ public class Article implements Parcelable {
         this.publishedAt = publishedAt;
     }
 
+    public String getSourceName() {
+        return sourceName;
+    }
+
+    public void setSourceName(String sourceName) {
+        this.sourceName = sourceName;
+    }
+
+    public long getRowId() {
+        return rowId;
+    }
+
+    public void setRowId(long rowId) {
+        this.rowId = rowId;
+    }
+
 
     @Override
     public int describeContents() {
@@ -96,6 +96,8 @@ public class Article implements Parcelable {
         dest.writeString(this.url);
         dest.writeString(this.urlToImage);
         dest.writeString(this.publishedAt);
+        dest.writeString(this.sourceName);
+        dest.writeLong(this.rowId);
     }
 
     public Article() {
@@ -108,9 +110,11 @@ public class Article implements Parcelable {
         this.url = in.readString();
         this.urlToImage = in.readString();
         this.publishedAt = in.readString();
+        this.sourceName = in.readString();
+        this.rowId = in.readLong();
     }
 
-    public static final Parcelable.Creator<Article> CREATOR = new Parcelable.Creator<Article>() {
+    public static final Creator<Article> CREATOR = new Creator<Article>() {
         @Override
         public Article createFromParcel(Parcel source) {
             return new Article(source);
@@ -132,6 +136,7 @@ public class Article implements Parcelable {
                 ", urlToImage='" + urlToImage + '\'' +
                 ", publishedAt='" + publishedAt + '\'' +
                 ", sourceName='" + sourceName + '\'' +
+                ", rowId=" + rowId +
                 '}';
     }
 }

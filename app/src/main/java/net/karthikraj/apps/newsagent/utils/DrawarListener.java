@@ -8,6 +8,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.view.MenuItem;
 
 import net.karthikraj.apps.newsagent.R;
+import net.karthikraj.apps.newsagent.about.AboutActivity;
 import net.karthikraj.apps.newsagent.categories.CategoriesActivity;
 import net.karthikraj.apps.newsagent.feeds.FeedsListActivity;
 import net.karthikraj.apps.newsagent.feeds.MainActivity;
@@ -45,8 +46,11 @@ public class DrawarListener implements NavigationView.OnNavigationItemSelectedLi
             launchIntent = new Intent(ownerActivity, LikedArticlesActivity.class);
             launchIntent.putExtra(FeedsListActivity.SELECTED_CATEGORY, 0);
             ownerActivity.startActivity(launchIntent);
+            ownerActivity.finish();
         } else if (id == R.id.nav_about) {
-
+            launchIntent = new Intent(ownerActivity, AboutActivity.class);
+            ownerActivity.startActivity(launchIntent);
+            ownerActivity.finish();
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;

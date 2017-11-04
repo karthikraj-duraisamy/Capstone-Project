@@ -44,7 +44,7 @@
                     android:layout_gravity="center"
                     android:background="@drawable/text_bg_category"
                     android:gravity="center"
-                    android:text="GENERAL"
+                    android:text="@string/tab_title_general"
                     android:textColor="@color/colorWhite"
                     android:textSize="@dimen/textsize_categories_title"
                     android:textStyle="bold" />
@@ -76,7 +76,7 @@
                     android:layout_gravity="center"
                     android:background="@drawable/text_bg_category"
                     android:gravity="center"
-                    android:text="SPORTS"
+                    android:text="@string/tab_titile_sports"
                     android:textColor="@color/colorWhite"
                     android:textSize="@dimen/textsize_categories_title"
                     android:textStyle="bold" />
@@ -116,7 +116,7 @@
                     android:layout_gravity="center"
                     android:background="@drawable/text_bg_category"
                     android:gravity="center"
-                    android:text="ENTERTAINMENT"
+                    android:text="@string/tab_title_entertainment"
                     android:textColor="@color/colorWhite"
                     android:textSize="@dimen/textsize_categories_title"
                     android:textStyle="bold" />
@@ -148,7 +148,7 @@
                     android:layout_gravity="center"
                     android:background="@drawable/text_bg_category"
                     android:gravity="center"
-                    android:text="BUSINESS"
+                    android:text="@string/tab_title_business"
                     android:textColor="@color/colorWhite"
                     android:textSize="@dimen/textsize_categories_title"
                     android:textStyle="bold" />
@@ -189,7 +189,7 @@
                     android:layout_gravity="center"
                     android:background="@drawable/text_bg_category"
                     android:gravity="center"
-                    android:text="TECHNOLOGY"
+                    android:text="@string/tab_titile_technology"
                     android:textColor="@color/colorWhite"
                     android:textSize="@dimen/textsize_categories_title"
                     android:textStyle="bold" />
@@ -221,7 +221,7 @@
                     android:layout_gravity="center"
                     android:background="@drawable/text_bg_category"
                     android:gravity="center"
-                    android:text="MUSIC"
+                    android:text="@string/tab_titile_music"
                     android:textColor="@color/colorWhite"
                     android:textSize="@dimen/textsize_categories_title"
                     android:textStyle="bold" />

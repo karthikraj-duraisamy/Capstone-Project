@@ -1,12 +1,16 @@
 package net.karthikraj.apps.newsagent.feeds;
 
+import android.content.Intent;
 import android.database.Cursor;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
+import android.support.v4.util.Pair;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -14,9 +18,11 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 
 import net.karthikraj.apps.newsagent.R;
 import net.karthikraj.apps.newsagent.data.ArticlesContract;
+import net.karthikraj.apps.newsagent.detail.ArticleDetailsActivity;
 import net.karthikraj.apps.newsagent.model.Article;
 
 import java.util.ArrayList;
@@ -71,10 +77,23 @@ public class FeedsListActivity extends AppCompatActivity implements NewsFeedsAda
     }
 
     @Override
-    public void onArticleClicked(Article article) {
-        Snackbar.make(mRecyclerView, "We need to call detailView from here", Snackbar.LENGTH_LONG).show();
-    }
+    public void onArticleClicked(Article article, View imageView, View titleTextView, View authorNameTextView, View pushlishDateTextView) {
+        Intent launchIntent = new Intent(FeedsListActivity.this, ArticleDetailsActivity.class);
+        launchIntent.putExtra(ArticleDetailsActivity.EXTRA_SELECTED_ARTICLE, article);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 
+            Pair<View, String> p1 = Pair.create((View) imageView, "newsarticle");
+            Pair<View, String> p2 = Pair.create((View) titleTextView, "newsarticletitle");
+            Pair<View, String> p3 = Pair.create((View) authorNameTextView, "newsarticleauthor");
+            Pair<View, String> p4 = Pair.create((View) pushlishDateTextView, "newsarticledate");
+            ActivityOptionsCompat options = ActivityOptionsCompat.
+                    makeSceneTransitionAnimation(FeedsListActivity.this, p1, p2, p3, p4);
+
+            startActivity(launchIntent, options.toBundle());
+        } else {
+            startActivity(launchIntent);
+        }
+    }
 
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {

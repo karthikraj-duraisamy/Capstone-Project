@@ -3,7 +3,6 @@ package net.karthikraj.apps.newsagent.categories;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -16,6 +15,9 @@ import net.karthikraj.apps.newsagent.R;
 import net.karthikraj.apps.newsagent.feeds.FeedsListActivity;
 import net.karthikraj.apps.newsagent.utils.DrawarListener;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * Created by karthik on 31/10/17.
  */
@@ -24,28 +26,30 @@ public class CategoriesActivity extends AppCompatActivity {
 
     private static final String TAG = CategoriesActivity.class.getSimpleName();
 
-    public DrawerLayout drawer;
+    @BindView(R.id.drawer_layout)
+    DrawerLayout drawer;
     private ActionBarDrawerToggle toggle;
-    private Toolbar toolbar;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
+    @BindView(R.id.nav_view)
+    NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categories);
+        ButterKnife.bind(this);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Categories");
+        actionBar.setTitle(getString(R.string.category));
 
-        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
         DrawarListener drawarListener = new DrawarListener(drawer, this);
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(drawarListener);
 
     }

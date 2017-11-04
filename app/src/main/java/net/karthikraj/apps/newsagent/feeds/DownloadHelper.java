@@ -2,6 +2,7 @@ package net.karthikraj.apps.newsagent.feeds;
 
 import android.app.Activity;
 import android.content.ContentValues;
+import android.content.Context;
 import android.util.Log;
 
 import net.karthikraj.apps.newsagent.BuildConfig;
@@ -29,8 +30,8 @@ public class DownloadHelper {
     private static final String API_KEY = BuildConfig.API_KEY;
 
 
-    private Activity callingActivity;
-    enum ArticlesCategory {
+    private Context mContext;
+    public enum ArticlesCategory {
         GENERAL,
         SPORTS,
         TECHNOLOGY,
@@ -44,8 +45,8 @@ public class DownloadHelper {
         void onDownloadComplete();
     }
 
-    public DownloadHelper(Activity callingActivityParam, DownloadListener downloadListenerParam) {
-        this.callingActivity = callingActivityParam;
+    public DownloadHelper(Context callingActivityParam, DownloadListener downloadListenerParam) {
+        this.mContext = callingActivityParam;
         this.downloadListener = downloadListenerParam;
         apiInterface = ServiceFactory.createRetrofitService();
     }
@@ -89,7 +90,7 @@ public class DownloadHelper {
                                 i++;
                             }
                             try {
-                                callingActivity.getContentResolver().bulkInsert(ArticlesContract.ArticleEntry.CONTENT_URI,
+                                mContext.getContentResolver().bulkInsert(ArticlesContract.ArticleEntry.CONTENT_URI,
                                         contentValues);
                             } catch (IllegalStateException e) {
                                 Log.w(TAG, "Database insertion failed because of the content values may null");
@@ -98,7 +99,7 @@ public class DownloadHelper {
 
                         @Override
                         public void onError(@NonNull Throwable e) {
-                            Log.e("GithubDemo", e.getMessage());
+                            Log.v(TAG, e.getMessage());
                         }
 
                         @Override
@@ -114,25 +115,25 @@ public class DownloadHelper {
         String[] categorySourceArray;
         switch (category) {
             case GENERAL:
-                categorySourceArray = callingActivity.getResources().getStringArray(R.array.category_general);
+                categorySourceArray = mContext.getResources().getStringArray(R.array.category_general);
                 break;
             case SPORTS:
-                categorySourceArray = callingActivity.getResources().getStringArray(R.array.category_sports);
+                categorySourceArray = mContext.getResources().getStringArray(R.array.category_sports);
                 break;
             case TECHNOLOGY:
-                categorySourceArray = callingActivity.getResources().getStringArray(R.array.category_technology);
+                categorySourceArray = mContext.getResources().getStringArray(R.array.category_technology);
                 break;
             case ENTERTAINMENT:
-                categorySourceArray = callingActivity.getResources().getStringArray(R.array.category_entertainment);
+                categorySourceArray = mContext.getResources().getStringArray(R.array.category_entertainment);
                 break;
             case BUSINESS:
-                categorySourceArray = callingActivity.getResources().getStringArray(R.array.category_business);
+                categorySourceArray = mContext.getResources().getStringArray(R.array.category_business);
                 break;
             case MUSIC:
-                categorySourceArray = callingActivity.getResources().getStringArray(R.array.category_music);
+                categorySourceArray = mContext.getResources().getStringArray(R.array.category_music);
                 break;
             default:
-                categorySourceArray = callingActivity.getResources().getStringArray(R.array.category_general);
+                categorySourceArray = mContext.getResources().getStringArray(R.array.category_general);
                 break;
         }
         return categorySourceArray;

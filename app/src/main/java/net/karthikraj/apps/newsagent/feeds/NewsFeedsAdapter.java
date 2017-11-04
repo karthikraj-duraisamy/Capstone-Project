@@ -1,6 +1,7 @@
 package net.karthikraj.apps.newsagent.feeds;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.squareup.picasso.Picasso;
 
 import net.karthikraj.apps.newsagent.R;
@@ -28,9 +30,10 @@ public class NewsFeedsAdapter extends RecyclerView.Adapter<NewsFeedsAdapter.View
     private Context mContext;
     private ArticleClickListener articleClickListener;
     private List<Article> articleList;
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     public interface ArticleClickListener {
-        void onArticleClicked(Article article);
+        void onArticleClicked(Article article, View imageView, View titleView, View authorView, View dateView);
     }
 
 
@@ -38,6 +41,9 @@ public class NewsFeedsAdapter extends RecyclerView.Adapter<NewsFeedsAdapter.View
         this.mContext = context;
         this.articleClickListener = listener;
         articleList = new ArrayList<>();
+        // Obtain the FirebaseAnalytics instance.
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(context);
+
     }
 
     public void updateDataSet(List<Article> list) {
@@ -60,7 +66,10 @@ public class NewsFeedsAdapter extends RecyclerView.Adapter<NewsFeedsAdapter.View
 
         @Override
         public void onClick(View view) {
-            articleClickListener.onArticleClicked(articleList.get(getAdapterPosition()));
+            Bundle bundle = new Bundle();
+            bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, articleList.get(getAdapterPosition()).getTitle());
+            mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
+            articleClickListener.onArticleClicked(articleList.get(getAdapterPosition()), newsFeedImage, newsTitleText, authorNameText, publishedAtText);
         }
     }
 
@@ -80,6 +89,7 @@ public class NewsFeedsAdapter extends RecyclerView.Adapter<NewsFeedsAdapter.View
                     load(article.getUrlToImage()).
                     placeholder(R.drawable.news_feed_placeholder).
                     error(R.drawable.news_feed_placeholder).
+                    fit().
                     into(holder.newsFeedImage);
         } catch (Exception e) {
             e.printStackTrace();
