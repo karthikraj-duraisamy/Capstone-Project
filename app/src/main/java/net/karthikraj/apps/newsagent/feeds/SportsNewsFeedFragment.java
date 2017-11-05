@@ -2,12 +2,9 @@ package net.karthikraj.apps.newsagent.feeds;
 
 import android.content.Intent;
 import android.database.Cursor;
-import android.database.DatabaseUtils;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
@@ -22,7 +19,6 @@ import android.view.ViewGroup;
 
 import net.karthikraj.apps.newsagent.R;
 import net.karthikraj.apps.newsagent.data.ArticlesContract;
-import net.karthikraj.apps.newsagent.data.NewsAgentDBHelper;
 import net.karthikraj.apps.newsagent.detail.ArticleDetailsActivity;
 import net.karthikraj.apps.newsagent.model.Article;
 

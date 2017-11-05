@@ -66,6 +66,7 @@
 
             <TextView
                 android:id="@+id/article_title"
+                style="@style/TextAppearance.AppCompat.Headline"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -95,8 +96,8 @@
                     style="@style/TextAppearance.AppCompat.Caption"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
                     android:text="@string/circle_text"
                     android:textColor="@color/colorTextAndIcon" />
 
@@ -128,7 +129,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:background="@null"
-                android:drawableLeft="@drawable/ic_menu_share"
+                android:drawableStart="@drawable/ic_menu_share"
                 android:drawablePadding="@dimen/share_btn_drawable_padding"
                 android:onClick="onShareButtonClick"
                 android:padding="@dimen/normal_16dp_padding"
