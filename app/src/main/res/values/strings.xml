@@ -96,6 +96,16 @@
     <string name="tab_titile_music">MUSIC</string>
     <string name="about_app_text">NeswAgent v 1.0.0\n\n\nNewsAgent is an Android application which aggregates all the latest news of categories like General, Entertainment, Sports, Business, Technology, Music.\n\n\nAdditionally NewsAgent application provides the ability to like and store the news content for future reference. Users can share the news content.\n\n\nThis application is created as a capstone project for the Android Nanodegree Developer program.</string>
     <string name="app_short_desc">Perfect news application</string>
+    <string name="content_desc_article_image">Article Image</string>
+    <string name="content_desc_category_selection_general">Category Selection Image - General</string>
+    <string name="content_desc_category_selection_sports">Category Selection Image - Sports</string>
+    <string name="content_desc_category_selection_entertainment">Category Selection Image - Entertainment</string>
+    <string name="content_desc_category_selection_business">Category Selection Image - Business</string>
+    <string name="content_desc_category_selection_technology">Category Selection Image - Technology</string>
+    <string name="content_desc_category_selection_music">Category Selection Image - Music</string>
+    <string name="content_desc_application_icon">Application icon</string>
+    <string name="msg_no_articles_found">No Articles found in this category for now</string>
+    <string name="msg_no_likes_yet">You have no liked articles yet.</string>
 
 
 </resources>

@@ -29,6 +29,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/colorPrimary"
+                android:contentDescription="@string/content_desc_article_image"
                 android:fitsSystemWindows="true"
                 android:scaleType="centerCrop"
                 android:transitionName="@string/shared_elements_newsarticle" />
@@ -135,6 +136,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:background="@null"
+                    android:drawableStart="@drawable/ic_menu_share"
                     android:drawableLeft="@drawable/ic_menu_share"
                     android:drawablePadding="20dp"
                     android:onClick="onShareButtonClick"
@@ -154,6 +156,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/fab_margin"
         android:clickable="true"
+        android:focusable="true"
         android:contentDescription="@string/content_desc_like_button"
         android:onClick="onLikeButtonClick"
         app:borderWidth="0dp"

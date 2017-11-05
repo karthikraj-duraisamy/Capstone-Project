@@ -30,11 +30,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/colorPrimary"
+                android:contentDescription="@string/content_desc_article_image"
                 android:fitsSystemWindows="true"
                 android:scaleType="centerCrop"
-                android:contentDescription="@string/content_desc_article_image"
-                android:transitionName="@string/shared_elements_newsarticle"
-                tools:ignore="UnusedAttribute" />
+                android:transitionName="@string/shared_elements_newsarticle" />
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/detail_toolbar"
@@ -98,8 +97,8 @@
                     style="@style/TextAppearance.AppCompat.Caption"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
                     android:text="@string/circle_text"
                     android:textColor="@color/colorTextAndIcon" />
 
@@ -132,7 +131,6 @@
                 android:layout_gravity="center"
                 android:background="@null"
                 android:drawableStart="@drawable/ic_menu_share"
-                android:drawableLeft="@drawable/ic_menu_share"
                 android:drawablePadding="20dp"
                 android:onClick="onShareButtonClick"
                 android:padding="16dp"

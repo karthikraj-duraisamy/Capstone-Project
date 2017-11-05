@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         DrawarListener drawarListener = new DrawarListener(drawer, this);
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(drawarListener);
         if(getIntent().getExtras() != null) {
             FirebaseCrash.log("main Activity created from Widgets");

@@ -72,7 +72,7 @@ public class ArticleDetailsActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         if (savedInstanceState == null) {
             if (getIntent() != null && getIntent().hasExtra(EXTRA_SELECTED_ARTICLE)) {
-                mSelectedArticle = (Article) getIntent().getParcelableExtra(EXTRA_SELECTED_ARTICLE);
+                mSelectedArticle = getIntent().getParcelableExtra(EXTRA_SELECTED_ARTICLE);
                 mSelectedItemId = mSelectedArticle.getRowId();
                 mSelectedCategory = getIntent().getIntExtra(EXTRA_SELECTED_CATEGORY, 0);
             }

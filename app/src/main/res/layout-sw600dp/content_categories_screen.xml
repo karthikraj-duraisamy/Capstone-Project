@@ -16,7 +16,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:weightSum="3">
+            android:weightSum="3"
+            android:baselineAligned="false">
 
             <FrameLayout
                 android:id="@+id/layoutGeneral"
@@ -25,12 +26,14 @@
                 android:layout_margin="2dp"
                 android:layout_weight="1"
                 android:clickable="true"
+                android:focusable="true"
                 android:onClick="onGeneralClick">
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:scaleType="fitXY"
+                    android:contentDescription="@string/content_desc_category_selection_general"
                     app:srcCompat="@drawable/vector_general" />
 
                 <View
@@ -57,11 +60,13 @@
                 android:layout_margin="2dp"
                 android:layout_weight="1"
                 android:clickable="true"
+                android:focusable="true"
                 android:onClick="onSportsClick">
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
+                    android:contentDescription="@string/content_desc_category_selection_sports"
                     android:scaleType="fitXY"
                     app:srcCompat="@drawable/vector_sports" />
 
@@ -89,11 +94,13 @@
                 android:layout_margin="2dp"
                 android:layout_weight="1"
                 android:clickable="true"
+                android:focusable="true"
                 android:onClick="onEntertainmentClick">
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
+                    android:contentDescription="@string/content_desc_category_selection_entertainment"
                     android:scaleType="fitXY"
                     app:srcCompat="@drawable/vector_entertainment" />
 
@@ -129,11 +136,13 @@
                 android:layout_margin="2dp"
                 android:layout_weight="1"
                 android:clickable="true"
+                android:focusable="true"
                 android:onClick="onBusinessClick">
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
+                    android:contentDescription="@string/content_desc_category_selection_business"
                     android:scaleType="fitXY"
                     app:srcCompat="@drawable/vector_business" />
 
@@ -161,11 +170,13 @@
                 android:layout_margin="2dp"
                 android:layout_weight="1"
                 android:clickable="true"
+                android:focusable="true"
                 android:onClick="onTechnologyClick">
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
+                    android:contentDescription="@string/content_desc_category_selection_technology"
                     android:scaleType="fitXY"
                     app:srcCompat="@drawable/vector_technology" />
 
@@ -193,11 +204,13 @@
                 android:layout_margin="2dp"
                 android:layout_weight="1"
                 android:clickable="true"
+                android:focusable="true"
                 android:onClick="onMusicClick">
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
+                    android:contentDescription="@string/content_desc_category_selection_music"
                     android:scaleType="fitXY"
                     app:srcCompat="@drawable/vector_music" />
 

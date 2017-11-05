@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:scaleType="fitXY"
+        android:contentDescription="@string/content_desc_article_image"
         android:transitionName="@string/shared_elements_newsarticle"
         app:srcCompat="@drawable/vector_general" />
 

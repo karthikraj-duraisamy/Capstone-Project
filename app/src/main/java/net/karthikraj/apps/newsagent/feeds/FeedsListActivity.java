@@ -82,10 +82,10 @@ public class FeedsListActivity extends AppCompatActivity implements NewsFeedsAda
         launchIntent.putExtra(ArticleDetailsActivity.EXTRA_SELECTED_ARTICLE, article);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 
-            Pair<View, String> p1 = Pair.create((View) imageView, "newsarticle");
-            Pair<View, String> p2 = Pair.create((View) titleTextView, "newsarticletitle");
-            Pair<View, String> p3 = Pair.create((View) authorNameTextView, "newsarticleauthor");
-            Pair<View, String> p4 = Pair.create((View) pushlishDateTextView, "newsarticledate");
+            Pair<View, String> p1 = Pair.create(imageView, "newsarticle");
+            Pair<View, String> p2 = Pair.create(titleTextView, "newsarticletitle");
+            Pair<View, String> p3 = Pair.create(authorNameTextView, "newsarticleauthor");
+            Pair<View, String> p4 = Pair.create(pushlishDateTextView, "newsarticledate");
             ActivityOptionsCompat options = ActivityOptionsCompat.
                     makeSceneTransitionAnimation(FeedsListActivity.this, p1, p2, p3, p4);
 
@@ -117,7 +117,7 @@ public class FeedsListActivity extends AppCompatActivity implements NewsFeedsAda
         if (data == null)
             return;
 
-        Cursor cursor = (Cursor) data;
+        Cursor cursor = data;
         mArticleList.clear();
         if (cursor.getCount() > 0) {
             cursor.moveToFirst();
@@ -187,7 +187,7 @@ public class FeedsListActivity extends AppCompatActivity implements NewsFeedsAda
             mAdapter.notifyDataSetChanged();
 
         } else {
-            Snackbar.make(mRecyclerView, "No Articles found in this category for now", Snackbar.LENGTH_LONG).show();
+            Snackbar.make(mRecyclerView, R.string.msg_no_articles_found, Snackbar.LENGTH_LONG).show();
         }
     }
 

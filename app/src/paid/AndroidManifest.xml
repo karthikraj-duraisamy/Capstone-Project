@@ -85,7 +85,7 @@
             android:name="com.google.firebase.messaging.default_notification_color"
             android:resource="@color/colorAccent" />
 
-        <activity android:name=".paid.ArticleDetailsActivity"></activity>
+        <activity android:name=".paid.ArticleDetailsActivity"/>
     </application>
 
 </manifest>

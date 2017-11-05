@@ -90,7 +90,7 @@ public class LikedArticlesActivity extends AppCompatActivity implements NewsFeed
         toggle.syncState();
 
         DrawarListener drawarListener = new DrawarListener(drawer, this);
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(drawarListener);
 
     }
@@ -101,10 +101,10 @@ public class LikedArticlesActivity extends AppCompatActivity implements NewsFeed
         launchIntent.putExtra(ArticleDetailsActivity.EXTRA_SELECTED_ARTICLE, article);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 
-            Pair<View, String> p1 = Pair.create((View) imageView, "newsarticle");
-            Pair<View, String> p2 = Pair.create((View) titleTextView, "newsarticletitle");
-            Pair<View, String> p3 = Pair.create((View) authorNameTextView, "newsarticleauthor");
-            Pair<View, String> p4 = Pair.create((View) pushlishDateTextView, "newsarticledate");
+            Pair<View, String> p1 = Pair.create(imageView, "newsarticle");
+            Pair<View, String> p2 = Pair.create(titleTextView, "newsarticletitle");
+            Pair<View, String> p3 = Pair.create(authorNameTextView, "newsarticleauthor");
+            Pair<View, String> p4 = Pair.create(pushlishDateTextView, "newsarticledate");
             ActivityOptionsCompat options = ActivityOptionsCompat.
                     makeSceneTransitionAnimation(LikedArticlesActivity.this, p1, p2, p3, p4);
 
@@ -136,7 +136,7 @@ public class LikedArticlesActivity extends AppCompatActivity implements NewsFeed
         if (data == null)
             return;
 
-        Cursor cursor = (Cursor) data;
+        Cursor cursor = data;
         mArticleList.clear();
         if (cursor.getCount() > 0) {
             cursor.moveToFirst();
@@ -160,7 +160,7 @@ public class LikedArticlesActivity extends AppCompatActivity implements NewsFeed
             mAdapter.notifyDataSetChanged();
 
         } else {
-            Snackbar.make(mRecyclerView, "You have no liked articles yet.", Snackbar.LENGTH_LONG).show();
+            Snackbar.make(mRecyclerView, R.string.msg_no_likes_yet, Snackbar.LENGTH_LONG).show();
         }
     }
 

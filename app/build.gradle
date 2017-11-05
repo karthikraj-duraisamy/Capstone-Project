@@ -2,6 +2,14 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.jakewharton.butterknife'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'keyalias'
+            keyPassword '123456'
+            storeFile file("$rootDir/releasekeystore.jks")
+            storePassword '123456'
+        }
+    }
     compileSdkVersion rootProject.compileSdkVersion
     buildToolsVersion rootProject.buildToolsVersion
     defaultConfig {
@@ -25,6 +33,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
         applicationVariants.all { variant ->
             variant.buildConfigField "String", "API_KEY", "\"" + getApiKey() + "\""
